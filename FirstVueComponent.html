@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习Component组件</title>
+    <script src ="./vue.js"></script>
+</head>
+
+<body>
+<div id="app7">
+    <ol>
+        <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:cmsg="msg"
+        v-bind:key="item.id"
+        ></todo-item>
+    </ol>
+</div>
+
+<script>
+    Vue.component('todo-item',{
+        props:['todo','cmsg'],
+        template:'<li>{{cmsg}}{{todo.text}}</li>',
+    })
+
+    var app7 = new Vue({
+        el:"#app7",
+        data:{
+            groceryList:[
+                {id:0,text:"蔬菜"},
+                {id:1,text:"水果"},
+                {id:2,text:"奶酪"},
+            ],
+            msg:"hello world"
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

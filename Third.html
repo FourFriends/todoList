@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学习Component组件2</title>
+    <script src ="./vue.js"></script>
+</head>
+
+<body>
+
+<div id="components-demo">
+    <button-counter title="My journey with Vue"></button-counter>
+</div>
+
+<script>
+    Vue.component('button-counter', {
+        props: ['title'],
+        template: '<div class="blog-post">\n' +
+            '  <h3>{{ title }}</h3>\n' +
+            '  <div v-html="content"></div>\n' +
+            '</div>'
+    });
+    new Vue({ el: '#components-demo' });
+</script>
+
+</body>
+</html>
